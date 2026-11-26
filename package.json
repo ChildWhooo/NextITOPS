@@ -1,0 +1,56 @@
+{
+  "name": "nextitops-itsm",
+  "version": "1.0.0.20261126",
+  "private": true,
+  "type": "module",
+  "description": "NextITops — 轻量现代 ITSM & CMDB 平台",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "scripts": {
+    "dev": "concurrently -n API,VITE -c cyan,magenta \"node --watch server/index.js\" \"vite --config web/vite.config.ts\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:web": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "typecheck": "tsc -p web/tsconfig.json --noEmit",
+    "start": "node server/index.js",
+    "seed": "node server/db/seed.js --reset"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/multipart": "^9.2.1",
+    "@fastify/static": "^8.2.0",
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.19",
+    "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
+    "fastify": "^5.6.1",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "lucide-react": "^0.552.0",
+    "mysql2": "^3.15.3",
+    "nodemailer": "^10.3.1",
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6",
+    "recharts": "^2.15.4",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "playwright-core": "^1.56.1",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  }
+}

@@ -1,0 +1,21 @@
+services:
+  nexaops:
+    build: .
+    container_name: nexaops-itsm
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+      DATA_DIR: /data
+      DB_CLIENT: better-sqlite3
+      DB_FILE: /data/itsm.db
+      JWT_SECRET: ${JWT_SECRET:-change-this-secret-before-production}
+      AUTO_SEED: "true"
+      TZ: Asia/Shanghai
+    volumes:
+      - nexaops_data:/data
+
+volumes:
+  nexaops_data:
