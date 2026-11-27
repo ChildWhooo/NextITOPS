@@ -246,7 +246,7 @@ CMDB 和 ITSM 不是两个孤立模块，而是同一条资产与服务的生命
 ### 4.2 获取代码
 
 ```bash
-git clone <your-repository-url> NextITops
+git clone https://github.com/ChildWhooo/NextITOPS.git
 cd NextITops
 git switch git-release
 ```
